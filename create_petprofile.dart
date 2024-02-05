@@ -31,6 +31,7 @@ class _CreatePetProfilePageState extends State<CreatePetProfilePage> {
   String? _doctorAppointment;
   String? _gender;
 
+  int _selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -131,7 +132,8 @@ class _CreatePetProfilePageState extends State<CreatePetProfilePage> {
                                 30, // Adjust the position of the icon as needed
                             right: 0,
                             child: IconButton(
-                              icon: Icon(Icons.drive_file_rename_outline_outlined),
+                              icon: Icon(
+                                  Icons.drive_file_rename_outline_outlined),
                               onPressed: () {
                                 // Add your edit icon onPressed logic here
                               },
@@ -188,7 +190,8 @@ class _CreatePetProfilePageState extends State<CreatePetProfilePage> {
                                 30, // Adjust the position of the icon as needed
                             right: 0,
                             child: IconButton(
-                              icon: Icon(Icons.drive_file_rename_outline_outlined),
+                              icon: Icon(
+                                  Icons.drive_file_rename_outline_outlined),
                               onPressed: () {
                                 // Add your edit icon onPressed logic here
                               },
@@ -242,7 +245,8 @@ class _CreatePetProfilePageState extends State<CreatePetProfilePage> {
                                 30, // Adjust the position of the icon as needed
                             right: 0,
                             child: IconButton(
-                              icon: Icon(Icons.drive_file_rename_outline_outlined),
+                              icon: Icon(
+                                  Icons.drive_file_rename_outline_outlined),
                               onPressed: () {
                                 // Add your edit icon onPressed logic here
                               },
@@ -301,7 +305,8 @@ class _CreatePetProfilePageState extends State<CreatePetProfilePage> {
                                 30, // Adjust the position of the icon as needed
                             right: 0,
                             child: IconButton(
-                              icon: Icon(Icons.drive_file_rename_outline_outlined),
+                              icon: Icon(
+                                  Icons.drive_file_rename_outline_outlined),
                               onPressed: () {
                                 // Add your edit icon onPressed logic here
                               },
@@ -359,8 +364,8 @@ class _CreatePetProfilePageState extends State<CreatePetProfilePage> {
                             top:
                                 12, // Adjust the position of the icon as needed
                             right: 8,
-                            child:
-                                Icon(Icons.drive_file_rename_outline_outlined), // Icon inside the input box
+                            child: Icon(Icons
+                                .drive_file_rename_outline_outlined), // Icon inside the input box
                           ),
                         ],
                       ),
@@ -423,7 +428,8 @@ class _CreatePetProfilePageState extends State<CreatePetProfilePage> {
                             top: 3, // Adjust the position of the icon as needed
                             right: 0,
                             child: IconButton(
-                              icon: Icon(Icons.drive_file_rename_outline_outlined),
+                              icon: Icon(
+                                  Icons.drive_file_rename_outline_outlined),
                               onPressed: () {
                                 // Add your edit icon onPressed logic here
                               },
@@ -480,7 +486,8 @@ class _CreatePetProfilePageState extends State<CreatePetProfilePage> {
                             top: 3, // Adjust the position of the icon as needed
                             right: 0,
                             child: IconButton(
-                              icon: Icon(Icons.drive_file_rename_outline_outlined),
+                              icon: Icon(
+                                  Icons.drive_file_rename_outline_outlined),
                               onPressed: () {
                                 // Add your edit icon onPressed logic here
                               },
@@ -536,7 +543,8 @@ class _CreatePetProfilePageState extends State<CreatePetProfilePage> {
                             top: 3, // Adjust the position of the icon as needed
                             right: 0,
                             child: IconButton(
-                              icon: Icon(Icons.drive_file_rename_outline_outlined),
+                              icon: Icon(
+                                  Icons.drive_file_rename_outline_outlined),
                               onPressed: () {
                                 // Add your edit icon onPressed logic here
                               },
@@ -592,7 +600,8 @@ class _CreatePetProfilePageState extends State<CreatePetProfilePage> {
                             top: 3, // Adjust the position of the icon as needed
                             right: 0,
                             child: IconButton(
-                              icon: Icon(Icons.drive_file_rename_outline_outlined),
+                              icon: Icon(
+                                  Icons.drive_file_rename_outline_outlined),
                               onPressed: () {
                                 // Add your edit icon onPressed logic here
                               },
@@ -648,7 +657,8 @@ class _CreatePetProfilePageState extends State<CreatePetProfilePage> {
                             top: 3, // Adjust the position of the icon as needed
                             right: 0,
                             child: IconButton(
-                              icon: Icon(Icons.drive_file_rename_outline_outlined),
+                              icon: Icon(
+                                  Icons.drive_file_rename_outline_outlined),
                               onPressed: () {
                                 // Add your edit icon onPressed logic here
                               },
@@ -703,11 +713,12 @@ class _CreatePetProfilePageState extends State<CreatePetProfilePage> {
                               BorderRadius.circular(25), // Border radius
                         ),
                       ),
-                      child: Text('Confirm',
-                      style: TextStyle(
-    color: Colors.white, // Set text color to white
-    fontWeight: FontWeight.bold, // Set text to bold
-  ),
+                      child: Text(
+                        'Confirm',
+                        style: TextStyle(
+                          color: Colors.white, // Set text color to white
+                          fontWeight: FontWeight.bold, // Set text to bold
+                        ),
                       ),
                     ),
                   ),
@@ -727,76 +738,236 @@ class _CreatePetProfilePageState extends State<CreatePetProfilePage> {
           ),
         ),
       ),
-      bottomNavigationBar: Container(
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(10),
-            topRight: Radius.circular(10),
+      bottomNavigationBar: BottomNavBar(
+        selectedIndex: _selectedIndex,
+        onItemTapped: (index) {
+          setState(() {
+            _selectedIndex = index;
+          });
+        },
+      ),
+      
+      // bottomNavigationBar: Container(
+      //   decoration: BoxDecoration(
+      //     borderRadius: BorderRadius.only(
+      //       topLeft: Radius.circular(10),
+      //       topRight: Radius.circular(10),
+      //     ),
+      //     boxShadow: [
+      //       BoxShadow(
+      //         color: Colors.grey.withOpacity(0.5),
+      //         spreadRadius: 5,
+      //         blurRadius: 7,
+      //         offset: Offset(0, 3), // changes position of shadow
+      //       ),
+      //     ],
+      //   ),
+      //   child: ClipRRect(
+      //     borderRadius: BorderRadius.only(
+      //       topLeft: Radius.circular(25),
+      //       topRight: Radius.circular(25),
+      //     ),
+      //     child: BottomNavigationBar(
+      //       unselectedItemColor: Colors.blue.shade900,
+      //       selectedItemColor: Colors.blue.shade900,
+      //       type: BottomNavigationBarType.fixed,
+      //       items: [
+      //         BottomNavigationBarItem(
+      //           icon: Icon(Icons.calendar_month_rounded),
+      //           label: 'Record',
+      //         ),
+      //         BottomNavigationBarItem(
+      //           icon: Icon(Icons.location_on_outlined),
+      //           label: 'Clinic',
+      //         ),
+      //         BottomNavigationBarItem(
+      //           icon: Container(
+      //             decoration: BoxDecoration(
+      //               boxShadow: [
+      //                 BoxShadow(
+      //                   color: Colors.blue.shade900.withOpacity(0.2),
+      //                   spreadRadius: 4,
+      //                   blurRadius: 5,
+      //                   offset: Offset(0, 2), // changes position of shadow
+      //                 ),
+      //               ],
+      //               shape: BoxShape.circle,
+      //             ),
+      //             child: CircleAvatar(
+      //               backgroundColor: Color.fromARGB(255, 255, 160, 138),
+      //               child:
+      //                   Icon(Icons.home_outlined, color: Colors.blue.shade900),
+      //             ),
+      //           ),
+      //           label: '', // Empty label to hide text
+      //         ),
+      //         BottomNavigationBarItem(
+      //           icon: Icon(Icons.class_outlined),
+      //           label: 'Guide',
+      //         ),
+      //         BottomNavigationBarItem(
+      //           icon: Icon(Icons.manage_accounts_outlined),
+      //           label: 'Profile',
+      //         ),
+      //       ],
+      //     ),
+      //   ),
+      // ),
+    );
+  }
+}
+
+class BottomNavBar extends StatelessWidget {
+  final int selectedIndex;
+  final Function(int) onItemTapped;
+
+  const BottomNavBar({
+    required this.selectedIndex,
+    required this.onItemTapped,
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: const BoxDecoration(
+        borderRadius: BorderRadius.only(
+          topRight: Radius.circular(30),
+          topLeft: Radius.circular(30),
+        ),
+        boxShadow: <BoxShadow>[
+          BoxShadow(
+            color: Color.fromARGB(40, 35, 0, 76),
+            blurRadius: 10,
           ),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.grey.withOpacity(0.5),
-              spreadRadius: 5,
-              blurRadius: 7,
-              offset: Offset(0, 3), // changes position of shadow
+        ],
+      ),
+      child: ClipRRect(
+        borderRadius: BorderRadius.only(
+          topRight: Radius.circular(30),
+          topLeft: Radius.circular(30),
+        ),
+        child: BottomNavigationBar(
+          items: [
+            // Record
+            BottomNavigationBarItem(
+              icon: Icon(Icons.calendar_month_outlined),
+              label: "Record",
+              activeIcon: Container(
+                decoration: const BoxDecoration(
+                  color: Color.fromARGB(255, 255, 160, 138),
+                  shape: BoxShape.circle,
+                  boxShadow: [
+                    BoxShadow(
+                      color: Color.fromARGB(50, 0, 75, 173),
+                      blurRadius: 12.0,
+                      spreadRadius: 2.29,
+                    )
+                  ],
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Icon(Icons.calendar_month_outlined),
+                ),
+              ),
+            ),
+            // Clinic
+            BottomNavigationBarItem(
+              icon: Icon(Icons.location_on_outlined),
+              label: "Clinic",
+              activeIcon: Container(
+                decoration: const BoxDecoration(
+                  color: Color.fromARGB(255, 255, 160, 138),
+                  shape: BoxShape.circle,
+                  boxShadow: [
+                    BoxShadow(
+                      color: Color.fromARGB(50, 0, 75, 173),
+                      blurRadius: 12.0,
+                      spreadRadius: 2.29,
+                    )
+                  ],
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Icon(Icons.location_on_outlined),
+                ),
+              ),
+            ),
+            // Home
+            BottomNavigationBarItem(
+              icon: Icon(Icons.home_outlined),
+              label: "Home",
+              activeIcon: Container(
+                decoration: const BoxDecoration(
+                  color: Color.fromARGB(255, 255, 160, 138),
+                  shape: BoxShape.circle,
+                  boxShadow: [
+                    BoxShadow(
+                      color: Color.fromARGB(50, 0, 75, 173),
+                      blurRadius: 12.0,
+                      spreadRadius: 2.29,
+                    )
+                  ],
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Icon(Icons.home_outlined),
+                ),
+              ),
+            ),
+            // Guide
+            BottomNavigationBarItem(
+              icon: Icon(Icons.book_outlined),
+              label: "Guide",
+              activeIcon: Container(
+                decoration: const BoxDecoration(
+                  color: Color.fromARGB(255, 255, 160, 138),
+                  shape: BoxShape.circle,
+                  boxShadow: [
+                    BoxShadow(
+                      color: Color.fromARGB(50, 0, 75, 173),
+                      blurRadius: 12.0,
+                      spreadRadius: 2.29,
+                    )
+                  ],
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Icon(Icons.book_outlined),
+                ),
+              ),
+            ),
+            // Profile
+            BottomNavigationBarItem(
+              icon: Icon(Icons.person_outline_rounded),
+              label: "Profile",
+              activeIcon: Container(
+                decoration: const BoxDecoration(
+                  color: Color.fromARGB(255, 255, 160, 138),
+                  shape: BoxShape.circle,
+                  boxShadow: [
+                    BoxShadow(
+                      color: Color.fromARGB(50, 0, 75, 173),
+                      blurRadius: 12.0,
+                      spreadRadius: 2.29,
+                    )
+                  ],
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Icon(Icons.person_outline_rounded),
+                ),
+              ),
             ),
           ],
-        ),
-        child: ClipRRect(
-          borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(25),
-            topRight: Radius.circular(25),
-          ),
-          child: BottomNavigationBar(
-            unselectedItemColor: Colors.blue.shade900,
-            selectedItemColor: Colors.blue.shade900,
-            type: BottomNavigationBarType.fixed,
-            items: [
-              BottomNavigationBarItem(
-                icon: Icon(Icons.calendar_month_rounded),
-                label: 'Record',
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.location_on_outlined),
-                label: 'Clinic',
-              ),
-              BottomNavigationBarItem(
-          icon: Container(
-            decoration: BoxDecoration(
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.blue.shade900.withOpacity(0.2),
-                  spreadRadius: 4,
-                  blurRadius: 5,
-                  offset: Offset(0, 2), // changes position of shadow
-                ),
-              ],
-              shape: BoxShape.circle,
-            ),
-            child: CircleAvatar(
-              backgroundColor: Colors.deepOrange[200],
-              child: Icon(Icons.home_outlined, color: Colors.blue.shade900),
-            ),
-          ),
-          label: '', // Empty label to hide text
-        ),
-              // BottomNavigationBarItem(
-              //   icon: CircleAvatar(
-              //     backgroundColor: Colors.deepOrange[200],
-              //     child: Icon(Icons.home, color: Colors.blue.shade900),
-              //   ),
-              //   label: '', // Empty label to hide text
-              // ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.class_outlined),
-                label: 'Guide',
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.manage_accounts_outlined),
-                label: 'Profile',
-              ),
-            ],
-          ),
+          currentIndex: selectedIndex,
+          unselectedItemColor: Color.fromARGB(255, 0, 74, 173),
+          showUnselectedLabels: true,
+          selectedItemColor: Color.fromARGB(255, 0, 74, 173),
+          showSelectedLabels: false,
+          onTap: onItemTapped,
+          type: BottomNavigationBarType.fixed,
+          unselectedFontSize: 14,
         ),
       ),
     );
