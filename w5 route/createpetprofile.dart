@@ -106,32 +106,6 @@ class _CreatePetProfilePageState extends State<CreatePetProfilePage> {
     }
   }
 
-  // void _navigateToNextPage() {
-  //   if (_formKey.currentState!.validate()) {
-  //     _formKey.currentState!.save();
-  //     PetInformation petInfo = PetInformation(
-  //       name: _name ?? '',
-  //       gender: _gender ?? '',
-  //       breed: _breed ?? '',
-  //       dob: _dob ?? '',
-  //       weight: _weight ?? '',
-  //       petType: widget.selectedPetName ?? '',
-  //       vaccinationStatus: _vaccinationStatus ?? '',
-  //       medicalHistory: _medicalHistory ?? '',
-  //       allergies: _allergies ?? '',
-  //       medication: _medication ?? '',
-  //       doctorAppointment: _doctorAppointment ?? '',
-  //     );
-  //     Navigator.push(
-  //       context,
-  //       MaterialPageRoute(
-  //         // builder: (context) => createpetprofilefilled(petInfo: petInfo),
-  //         builder: (context) => petprofilefilled(petInfo: petInfo),
-  //       ),
-  //     );
-  //   }
-  // }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -179,7 +153,6 @@ class _CreatePetProfilePageState extends State<CreatePetProfilePage> {
                         ),
                       IconButton(
                         icon: Icon(Icons.camera_alt),
-                        // onPressed: _pickAndNavigateToNextPage,
                         onPressed: () {
                           selectedImage();
                         },
@@ -201,9 +174,6 @@ class _CreatePetProfilePageState extends State<CreatePetProfilePage> {
                             children: [
                               Text(
                                 'Name',
-                                // style: TextStyle(
-                                //   fontWeight: FontWeight.bold,
-                                // ),
                               ),
                               SizedBox(height: 10),
                               TextFormField(
@@ -249,9 +219,6 @@ class _CreatePetProfilePageState extends State<CreatePetProfilePage> {
                             children: [
                               Text(
                                 'Gender',
-                                // style: TextStyle(
-                                //   fontWeight: FontWeight.bold,
-                                // ),
                               ),
                               SizedBox(height: 10),
                               DropdownButtonFormField(
@@ -314,9 +281,6 @@ class _CreatePetProfilePageState extends State<CreatePetProfilePage> {
                             children: [
                               Text(
                                 'Breed or Mix',
-                                // style: TextStyle(
-                                //   fontWeight: FontWeight.bold,
-                                // ),
                               ),
                               SizedBox(height: 10),
                               TextFormField(
@@ -362,9 +326,6 @@ class _CreatePetProfilePageState extends State<CreatePetProfilePage> {
                             children: [
                               Text(
                                 'Date of Birth',
-                                // style: TextStyle(
-                                //   fontWeight: FontWeight.bold,
-                                // ),
                               ),
                               SizedBox(height: 10),
                               TextFormField(
@@ -404,24 +365,6 @@ class _CreatePetProfilePageState extends State<CreatePetProfilePage> {
                                       value ?? ''; // Update the _dob variable
                                 },
                               ),
-
-                              // TextFormField(
-                              //   decoration: InputDecoration(
-                              //     border: OutlineInputBorder(
-                              //       borderRadius: BorderRadius.circular(10),
-                              //       borderSide: BorderSide(),
-                              //     ),
-                              //   ),
-                              //   validator: (value) {
-                              //     if (value == null || value.isEmpty) {
-                              //       return 'Please enter your pet\'s Date of Birth';
-                              //     }
-                              //     return null;
-                              //   },
-                              //   onSaved: (value) {
-                              //     _dob = value;
-                              //   },
-                              // ),
                             ],
                           ),
                           Positioned(
@@ -453,9 +396,6 @@ class _CreatePetProfilePageState extends State<CreatePetProfilePage> {
                             children: [
                               Text(
                                 'Weight',
-                                // style: TextStyle(
-                                //   fontWeight: FontWeight.bold,
-                                // ),
                               ),
                               SizedBox(height: 10),
                               TextFormField(
@@ -501,9 +441,6 @@ class _CreatePetProfilePageState extends State<CreatePetProfilePage> {
                             children: [
                               Text(
                                 'Pet type',
-                                // style: TextStyle(
-                                //   fontWeight: FontWeight.bold,
-                                // ),
                               ),
                               SizedBox(height: 10),
                               TextFormField(
@@ -816,16 +753,6 @@ class _CreatePetProfilePageState extends State<CreatePetProfilePage> {
                     ),
                   ),
                 ),
-
-                // ElevatedButton(
-                //   onPressed: () {
-                //     if (_formKey.currentState?.validate() ?? false) {
-                //       _formKey.currentState?.save();
-                //       // Handle form submission
-                //     }
-                //   },
-                //   child: Text('Confirm'),
-                // ),
               ],
             ),
           ),
